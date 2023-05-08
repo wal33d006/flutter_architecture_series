@@ -8,8 +8,17 @@ class UsersListCubit extends Cubit<UsersListState> {
   UsersListCubit(this.usersRepository) : super(UsersListState.empty());
 
   Future<void> fetchUsers() async {
-    emit(state.copyWith(isLoading: true));
-    final users = await usersRepository.getUsers();
-    emit(state.copyWith(users: users, isLoading: false));
+    emit(state.copyWith(isLoading: true, error: null));
+    final usersResponse = await usersRepository.getUsers();
+    usersResponse.fold(
+      (error) {
+        // show dialog error on UI
+        // after we add navigation layer
+        emit(state.copyWith(error: error.error));
+      },
+      (users) {
+        emit(state.copyWith(users: users, isLoading: false));
+      },
+    );
   }
 }

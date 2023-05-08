@@ -1,9 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:part_three/domain/entities/user.dart';
+import 'package:part_three/domain/failures/users_list_failure.dart';
 import 'package:part_three/domain/repositories/users_repository.dart';
 
 class MockUsersRepository implements UsersRepository {
   @override
-  Future<List<User>> getUsers() async => [
+  Future<Either<UsersListFailure, List<User>>> getUsers() async => right([
         User(
           id: 123,
           name: 'name',
@@ -12,5 +14,5 @@ class MockUsersRepository implements UsersRepository {
           phone: 'phone',
           website: 'website',
         )
-      ];
+      ]);
 }

@@ -21,6 +21,9 @@ class _UsersListPageState extends State<UsersListPage> {
           bloc: BlocProvider.of<UsersListCubit>(context),
           builder: (context, state) {
             final userState = state as UsersListState;
+            if (userState.error != null) {
+              return Center(child: Text(userState.error!));
+            }
             return userState.isLoading
                 ? const CircularProgressIndicator()
                 : ListView(
