@@ -5,7 +5,7 @@ import 'package:part_three_dot_five/ui/users_list/users_list_state.dart';
 class UsersListCubit extends Cubit<UsersListState> {
   final UsersRepository usersRepository;
 
-  UsersListCubit(this.usersRepository) : super(UsersListState.empty());
+  UsersListCubit(this.usersRepository) : super(UsersListState.initial());
 
   Future<void> fetchUsers() async {
     emit(state.copyWith(isLoading: true, error: null));

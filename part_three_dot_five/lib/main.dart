@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:part_three_dot_five/domain/repositories/users_repository.dart';
+import 'package:part_three_dot_five/ui/user_details/user_details_cubit.dart';
 import 'package:part_three_dot_five/ui/users_list/users_list_cubit.dart';
+import 'package:part_three_dot_five/ui/users_list/users_list_initial_params.dart';
 import 'package:part_three_dot_five/ui/users_list/users_list_page.dart';
 import 'package:part_three_dot_five/data/rest_api_users_repository.dart';
 
@@ -15,7 +17,10 @@ void main() async {
       providers: [
         BlocProvider(
           create: (context) => UsersListCubit(getIt())..fetchUsers(),
-        )
+        ),
+        BlocProvider(
+          create: (context) => UserDetailsCubit(),
+        ),
       ],
       child: const MyApp(),
     ),
@@ -32,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const UsersListPage(),
+      home: const UsersListPage(initialParams: UsersListInitialParams()),
     );
   }
 }

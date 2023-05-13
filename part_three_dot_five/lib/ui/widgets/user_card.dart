@@ -3,10 +3,12 @@ import 'package:part_three_dot_five/domain/entities/user.dart';
 
 class UserCard extends StatelessWidget {
   final User user;
+  final VoidCallback? onTap;
 
   const UserCard({
     Key? key,
     required this.user,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -19,6 +21,7 @@ class UserCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
+        onTap: onTap,
         title: Text(user.name),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
