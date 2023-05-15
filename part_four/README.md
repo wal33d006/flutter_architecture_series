@@ -1,16 +1,7 @@
-# part_four
+# Part 4
 
-A new Flutter project.
+### [YouTube lecture for this part](https://www.youtube.com/watch?v=E1pG3aNJp14)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Route mixins and Navigator classes for each feature
+- Refactoring to create a separate Navigator class
+- Using GetIt to inject the navigator class into our page-navigator classes
