@@ -23,7 +23,6 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
   @override
   void initState() {
     super.initState();
-    // TODO: Fix this later
     cubit = BlocProvider.of<UserDetailsCubit>(context);
     cubit.onInit(widget.initialParams);
   }
