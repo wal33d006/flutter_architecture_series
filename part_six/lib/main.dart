@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:part_six/domain/repositories/users_repository.dart';
 import 'package:part_six/navigation/app_navigator.dart';
+import 'package:part_six/network/network_repository.dart';
 import 'package:part_six/ui/user_details/user_details_cubit.dart';
 import 'package:part_six/ui/user_details/user_details_initial_params.dart';
 import 'package:part_six/ui/users_list/users_list_cubit.dart';
@@ -13,7 +14,8 @@ import 'package:part_six/data/rest_api_users_repository.dart';
 final getIt = GetIt.instance;
 
 void main() async {
-  getIt.registerSingleton<UsersRepository>(RestApiUsersRepository());
+  getIt.registerSingleton<NetworkRepository>(NetworkRepository());
+  getIt.registerSingleton<UsersRepository>(RestApiUsersRepository(getIt()));
   getIt.registerSingleton<AppNavigator>(AppNavigator());
   getIt.registerSingleton<UsersListNavigator>(UsersListNavigator(getIt()));
   getIt.registerFactoryParam<UsersListCubit, UsersListInitialParams, dynamic>(
