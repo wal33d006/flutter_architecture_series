@@ -5,11 +5,11 @@ import 'package:part_six/ui/user_details/user_details_initial_params.dart';
 import 'package:part_six/ui/user_details/user_details_state.dart';
 
 class UserDetailsPage extends StatefulWidget {
-  final UserDetailsInitialParams initialParams;
+  final UserDetailsCubit cubit;
 
   const UserDetailsPage({
     Key? key,
-    required this.initialParams,
+    required this.cubit,
   }) : super(key: key);
 
   @override
@@ -18,13 +18,11 @@ class UserDetailsPage extends StatefulWidget {
 
 class _UserDetailsPageState extends State<UserDetailsPage> {
 
-  late UserDetailsCubit cubit;
+  UserDetailsCubit get cubit => widget.cubit;
 
   @override
   void initState() {
     super.initState();
-    cubit = BlocProvider.of<UserDetailsCubit>(context);
-    cubit.onInit(widget.initialParams);
   }
 
   @override

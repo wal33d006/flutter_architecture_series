@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:part_six/main.dart';
 import 'package:part_six/navigation/app_navigator.dart';
 import 'package:part_six/ui/user_details/user_details_navigator.dart';
 import 'package:part_six/ui/users_list/users_list_initial_params.dart';
@@ -18,7 +19,7 @@ mixin UsersListRoute {
   openUsersListRoute(UsersListInitialParams initialParams) {
     navigator.push(
       context,
-      UsersListPage(initialParams: initialParams),
+      UsersListPage(cubit: getIt(param1: initialParams)),
     );
   }
 
