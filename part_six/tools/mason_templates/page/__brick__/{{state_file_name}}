@@ -1,0 +1,8 @@
+class {{class_name}}State {
+
+const {{class_name}}State();
+
+factory {{class_name}}State.initial() => const {{class_name}}State();
+
+{{class_name}}State copyWith() => const {{class_name}}State();
+}

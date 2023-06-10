@@ -1,0 +1,9 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '{{initial_params_file_name}}';
+import '{{state_file_name}}';
+
+class {{class_name}}Cubit extends Cubit<{{class_name}}State> {
+{{class_name}}Cubit() : super({{class_name}}State.initial());
+
+void onInit({{class_name}}InitialParams initialParams) {}
+}
