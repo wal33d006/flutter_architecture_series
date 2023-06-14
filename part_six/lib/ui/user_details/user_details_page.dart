@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:part_six/ui/user_details/user_details_cubit.dart';
-import 'package:part_six/ui/user_details/user_details_initial_params.dart';
 import 'package:part_six/ui/user_details/user_details_state.dart';
 
 class UserDetailsPage extends StatefulWidget {

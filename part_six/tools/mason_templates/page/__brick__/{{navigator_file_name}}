@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:part_six/main.dart';
 import 'package:part_six/navigation/app_navigator.dart';
 import '{{initial_params_file_name}}';
 import '{{page_file_name}}';
@@ -9,7 +10,7 @@ mixin {{class_name}}Route {
 open{{class_name}}({{class_name}}InitialParams initialParams) {
 navigator.push(
 context,
-{{class_name}}Page(initialParams: initialParams),
+{{class_name}}Page(cubit: getIt(param1: initialParams)),
 );
 }
 
