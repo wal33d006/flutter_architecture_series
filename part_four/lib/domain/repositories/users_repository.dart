@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:part_four/domain/entities/user.dart';
 import 'package:part_four/domain/failures/users_list_failure.dart';
 

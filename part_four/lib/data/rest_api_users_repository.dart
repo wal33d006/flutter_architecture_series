@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dartz/dartz.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:part_four/domain/entities/user.dart';
 import 'package:part_four/data/user_json.dart';
 import 'package:http/http.dart' as http;
